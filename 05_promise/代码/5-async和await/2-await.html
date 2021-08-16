@@ -6,25 +6,75 @@
     <title>await</title>
 </head>
 <body>
-    <script>
-        async function main(){
-            let p = new Promise((resolve, reject) => {
-                // resolve('OK');
-                reject('Error');
-            })
-            //1. 右侧为promise的情况
-            // let res = await p;
-            //2. 右侧为其他类型的数据
-            // let res2 = await 20;
-            //3. 如果promise是失败的状态
-            try{
-                let res3 = await p;
-            }catch(e){
-                console.log(e);
-            }
-        }
+<script>
 
-        main();
-    </script>
+    // await等待右侧表达式的结果，这个结果是promise对象或者其他值。
+    // 如果它等到的不是一个 promise 对象，那 await 表达式的运算结果就是它等到的东西。
+    // 如果它等到的是一个 promise 对象，await 就忙起来了，它会阻塞后面的代码，
+    // 等着 promise 对象 resolve，然后得到 resolve 的值，作为 await 表达式的运算结果。
+    async function main() {
+        // let p = new Promise((resolve, reject) => {
+        //      resolve('OK');
+        //     //reject('Error');
+        // })
+        //1. 右侧为promise的情况
+        // let res = await p;
+        //2. 右侧为其他类型的数据
+        // let res2 = await 20;
+        //3. 如果promise是失败的状态
+
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("test"), 2000);
+        })
+        try {
+            let res3 = await p;
+            console.log(res3);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    // main();
+    // console.log('end');
+
+    // function test() {
+    //     return new Promise(resolve => {
+    //         setTimeout(() => resolve("test"), 2000);
+    //     });
+    // }
+    //
+    // async function test2() {
+    //     const result = await test();
+    //     console.log(result);
+    // }
+    // test2();
+    // console.log('end');
+
+    async function test1() {
+        console.log('start test1');
+        console.log(await test2());
+        console.log('end test1');
+    }
+    async function test2() {
+        console.log('test2');
+        return await 'return test2 value'
+    }
+    test1();
+
+    console.log('start async');
+
+    setTimeout(() => {
+        console.log('setTimeout');
+    }, 0);
+
+    new Promise((resolve, reject) => {
+        console.log('promise1');
+        resolve();
+    }).then(() => {
+        console.log('promise2');
+    });
+    console.log('end async');
+
+</script>
 </body>
 </html>
