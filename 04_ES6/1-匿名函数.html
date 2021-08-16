@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //声明一个普通函数
+        function fn() {
+            console.log('aaaaaaaa--->')
+        }
+        //改成匿名函数
+        // function () {
+        //     console.log('bbbbbbbbbbbbb')
+        // }
+        //上面会有语法错误
+      
+
+        //用一个变量接收匿名函数，本质上这个变量名称就是匿名函数名称
+        var fn = function () {
+            return "我是一只小小小小留下，怎么飞也飞不高！"
+        }
+        console.info(fn())
+
+    </script>
+</body>
+
+</html>
