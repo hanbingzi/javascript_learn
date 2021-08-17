@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //JSON转化为字符串:    JSON.stringify
+        let json1 = { a: 12, b: 5 };
+        console.log(JSON.stringify(json1));
+        // {"a":12,"b":5}
+
+        //字符串转化为JSON:    JSON.parse
+        let str = '{"a": 12, "b": 5, "c": "abc"}';
+        let json2 = JSON.parse(str);
+        console.log(json2);
+        //{a: 12, b: 5, c: "abc"}
+    </script>
+</body>
+
+</html>

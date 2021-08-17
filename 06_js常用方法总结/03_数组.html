@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //1.声明数组的四个方法
+        //第一种
+        var A = [12, 78, 78, 78, 89]
+        console.log(A)
+
+        //第二种
+        var B = new Array();
+        B[0] = 12
+        B[1] = 34
+        B[2] = 56
+        console.log(B)
+
+
+        //第三种
+        var C = new Array(3);
+        C[0] = 12
+        C[1] = 34
+        C[2] = 56
+        console.log(C)
+
+
+        //第四种
+
+        var D = new Array(45, 78, 89, 45);
+        console.log(D)
+
+        /**
+        * 2. 数值的操作
+        * 其他
+        * join()
+        * join() 方法用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分隔的，默认使用','号分割，不改变原数组。
+        * push()
+        * push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度
+        * pop()
+        * pop() 方法用于删除并返回数组的最后一个元素
+        * shift()
+        * shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。返回第一个元素，改变原数组
+        * unshift()
+        * unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。返回新长度，改变原数组。
+        * slice()
+        * slice()返回一个新的数组，
+        * splice()
+        * splice 删除数组固定位置的元素
+        * substring() 和 substr()
+        * 相同点：如果只是写一个参数，两者的作用都一样：都是是截取字符串从当前下标以后直到字符串最后的字符串片段。
+        * 不同点：第二个参数
+        * substr（startIndex,lenth）： 第二个参数是截取字符串的长度（从起始点截取某个长度的字符串）；
+        * substring（startIndex, endIndex）： 第二个参数是截取字符串最终的下标 （截取2个位置之间的字符串,‘含头不含尾’）。
+        * sort 排序
+        * 按照 Unicode code 位置排序，默认升序
+        * reverse()
+        * reverse() 方法用于颠倒数组中元素的顺序
+        * 详细的在此网站上查看
+        * https://www.jianshu.com/p/360aed2079b4
+        */
+    </script>
+</body>
+
+</html>
