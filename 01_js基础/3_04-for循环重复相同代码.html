@@ -7,17 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        // for 循环可以执行相同的代码
-        for (var i = 1; i <= 10; i++) {
-            console.log('媳妇我错了');
+        // // for 循环可以执行相同的代码
+        // for (var i = 1; i <= 10; i++) {
+        //     console.log('媳妇我错了');
+        //
+        // }
+        // // 我们可以让用户控制输出的次数
+        // var num = prompt('请您输入次数');
+        // for (var i = 1; i <= num; i++) {
+        //     console.log('媳妇我错了');
+        //
+        // }
+        let j = [{key:'a'},{key:'b',children:[{key:'b1',name:'aaaa'}]}]
 
+        function findKey(key, tree) {
+            if(!tree || tree.length==0) return null
+            for(let item of tree){
+                if(item.key===key) return item;
+                if(item.children && item.children.length!==0){
+                    let result = findKey(key,item.children);
+                    if(result) return result
+                }
+            }
+            return null
         }
-        // 我们可以让用户控制输出的次数
-        var num = prompt('请您输入次数');
-        for (var i = 1; i <= num; i++) {
-            console.log('媳妇我错了');
 
-        }
+        console.log(findKey('b1',j))
     </script>
 </head>
 

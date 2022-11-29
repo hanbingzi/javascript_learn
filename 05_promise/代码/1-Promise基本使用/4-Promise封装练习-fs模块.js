@@ -21,4 +21,5 @@ mineReadFile('./resource/content.txt')
     console.log(value.toString());
 }, reason=>{
     console.log(reason);
-});
+})
+;
